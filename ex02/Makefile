@@ -1,5 +1,5 @@
-SRCS = PhoneBook.cpp Contact.cpp main.cpp
-NAME = PhoneBook
+SRCS = Account.cpp tests.cpp
+NAME = Account
 CC = c++ -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 
 all: $(NAME)

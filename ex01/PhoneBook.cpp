@@ -6,13 +6,13 @@
 /*   By: haalouan <haalouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 09:24:28 by haalouan          #+#    #+#             */
-/*   Updated: 2024/08/12 14:45:04 by haalouan         ###   ########.fr       */
+/*   Updated: 2024/08/14 19:58:01 by haalouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() : MaxContact(8), CurrentIndex(0), ContactCount(0){//initialize   
+PhoneBook::PhoneBook() : MaxContact(8), CurrentIndex(0), ContactCount(0){
 }
 
 void PhoneBook::AddContact() {
@@ -51,6 +51,10 @@ void PhoneBook::AddContact() {
         ContactCount++;
 }
 
+int isAlpha(char ch){
+    return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z');
+}
+
 void PhoneBook::SearchContact(){
 
     std::cout << std::setw(10) << std::right << "Index" << " | ";
@@ -78,7 +82,8 @@ void PhoneBook::SearchContact(){
     std::string result;
     std::getline(std::cin, result);
     int index = atoi(result.c_str());
-    if (index == 0 && result[0] != '\0'){
+    printf("%d\n", index);
+    if (isAlpha(result[0])){
         std::cout << "Enter a valid digit\n";
         return ;
     }
@@ -86,7 +91,7 @@ void PhoneBook::SearchContact(){
         std::cout << "Out of range\n";
         return ;
     }
-    if (index > this->CurrentIndex){
+    if (index >= this->CurrentIndex){
         std::cout << "The contact is empty\n";
         return ;
     }
