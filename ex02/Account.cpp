@@ -42,8 +42,19 @@ int	Account::getNbWithdrawals(){
 
 void Account::_displayTimestamp(){
    //get the time
-   std::cout << "Time Now" << std::endl;
+    std::cout << "Time Now" << std::endl;
+    // std::time_t now = std::time(0);
+    // std::tm *ltm = std::localtime(&now);
+    // std::cout << "[" << 1900 + ltm->tm_year
+    //           << std::setfill('0') << std::setw(2) << 1 + ltm->tm_mon
+    //           << std::setfill('0') << std::setw(2) << ltm->tm_mday
+    //           << "_"
+    //           << std::setfill('0') << std::setw(2) << ltm->tm_hour
+    //           << std::setfill('0') << std::setw(2) << ltm->tm_min
+    //           << std::setfill('0') << std::setw(2) << ltm->tm_sec
+    //           << "] ";
 }
+
 
 void	Account::displayAccountsInfos( void ){
     _displayTimestamp();
